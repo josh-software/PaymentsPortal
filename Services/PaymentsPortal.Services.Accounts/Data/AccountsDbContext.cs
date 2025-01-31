@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PaymentsPortal.Common.DTOs.Accounts.Enums;
 using PaymentsPortal.Services.Accounts.Data.Entities;
 
 namespace PaymentsPortal.Services.Accounts.Data

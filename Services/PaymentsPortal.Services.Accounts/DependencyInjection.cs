@@ -27,7 +27,7 @@ namespace PaymentsPortal.Services.Accounts
             services.AddMassTransit(x =>
             {
                 //Add consumers here
-                x.AddConsumer<GetWeatherForcastConsumer>();
+                x.AddConsumer<GetAccountsConsumer>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>
