@@ -28,6 +28,10 @@ Payment Portal is a basic account management system, designed as a learning proj
 3. Set the `docker-compose` project as the startup project.
 4. Run the solution, the docker-compose project will start the services, open the swagger UI to test the API, and open the React app. All of this is debuggable in editor.
 
+Warnings:
+ - API calls from the React app will not work until the services are up and running. This may take a few seconds. If you experience issues, try refreshing the page.
+ - RabbitMQ and SQL Server may take a while longer to start up, causing connection failures in the service logs. This should eventually resolve itself, but it not, try restarting the services.
+
 ### Accessing SQL Server:
 - Server: `localhost, 5433`
 - Username: `sa`

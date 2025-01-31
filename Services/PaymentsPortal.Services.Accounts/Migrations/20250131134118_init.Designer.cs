@@ -12,8 +12,8 @@ using PaymentsPortal.Services.Accounts.Data;
 namespace PaymentsPortal.Services.Accounts.Migrations
 {
     [DbContext(typeof(AccountsDbContext))]
-    [Migration("20250130151956_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250131134118_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,15 @@ namespace PaymentsPortal.Services.Accounts.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("AccountType")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsFrozen")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -38,6 +47,30 @@ namespace PaymentsPortal.Services.Accounts.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Accounts");
+
+                    b.HasDiscriminator<int>("AccountType");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("PaymentsPortal.Services.Accounts.Data.Entities.CurrentAccount", b =>
+                {
+                    b.HasBaseType("PaymentsPortal.Services.Accounts.Data.Entities.Account");
+
+                    b.Property<decimal>("OverdraftLimit")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasDiscriminator().HasValue(0);
+                });
+
+            modelBuilder.Entity("PaymentsPortal.Services.Accounts.Data.Entities.SavingsAccount", b =>
+                {
+                    b.HasBaseType("PaymentsPortal.Services.Accounts.Data.Entities.Account");
+
+                    b.Property<decimal>("InterestRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasDiscriminator().HasValue(1);
                 });
 #pragma warning restore 612, 618
         }

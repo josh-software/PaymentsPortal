@@ -14,7 +14,24 @@ namespace PaymentsPortal.Services.Accounts.Data
             // Seed data
             if (!context.Accounts.Any())
             {
-                context.Accounts.Add(new Entities.Account { Id = Guid.NewGuid(), Name = "TestUser1" });
+                // Test savings account
+                context.Accounts.Add(new Entities.SavingsAccount
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Savings User 1",
+                    Balance = 1000,
+                    InterestRate = 0.01m
+                });
+
+                // Test current account
+                context.Accounts.Add(new Entities.CurrentAccount
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Current User 1",
+                    Balance = 1000,
+                    OverdraftLimit = 100
+                });
+
                 await context.SaveChangesAsync();
             }
         }
