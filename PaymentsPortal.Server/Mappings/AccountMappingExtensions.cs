@@ -25,5 +25,20 @@ namespace PaymentsPortal.Server.Mappings
                 OverdraftLimit = accountDto.OverdraftLimit
             };
         }
+
+        public static AccountDto ToDto(this Account account)
+        {
+            var accountType = Enum.Parse<AccountType>(account.AccountType);
+            return new AccountDto
+            {
+                Id = account.Id,
+                Name = account.Name,
+                Balance = account.Balance,
+                IsFrozen = account.IsFrozen,
+                AccountType = accountType,
+                InterestRate = account.InterestRate,
+                OverdraftLimit = account.OverdraftLimit
+            };
+        }
     }
 }

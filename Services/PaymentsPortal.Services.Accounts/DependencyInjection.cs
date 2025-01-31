@@ -28,6 +28,8 @@ namespace PaymentsPortal.Services.Accounts
             {
                 //Add consumers here
                 x.AddConsumer<GetAccountsConsumer>();
+                x.AddConsumer<GetAccountByIdConsumer>();
+                x.AddConsumer<CreateAccountConsumer>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>
