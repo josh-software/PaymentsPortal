@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "docker-compose",
+    "Projects": [
+      {
+        "Path": "paymentsportal.client\\paymentsportal.client.esproj",
+        "Action": "Start",
+        "DebugTarget": "localhost (Chrome)"
+      },
+      {
+        "Path": "docker-compose.dcproj",
+        "Action": "Start",
+        "DebugTarget": "Docker Compose"
+      }
+    ]
+  }
+]

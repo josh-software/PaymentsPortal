@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentsPortal.Server", "PaymentsPortal.Server\PaymentsPortal.Server.csproj", "{199E57B2-7AE1-4026-AAC7-B9A0A41A85D3}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "paymentsportal.client", "paymentsportal.client\paymentsportal.client.esproj", "{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E44E8199-1783-4F22-84EA-157262CF2BFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{CD13184E-13F6-4628-9BA5-478D071B4321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentsPortal.Services.Accounts", "Services\PaymentsPortal.Services.Accounts\PaymentsPortal.Services.Accounts.csproj", "{6A16D752-14BD-4E86-8BE8-D64235C5EC84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentsPortal.Common", "PaymentsPortal.Common\PaymentsPortal.Common.csproj", "{CF4132A4-6C38-4D98-B0CC-EC3AF47E11C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{199E57B2-7AE1-4026-AAC7-B9A0A41A85D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199E57B2-7AE1-4026-AAC7-B9A0A41A85D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199E57B2-7AE1-4026-AAC7-B9A0A41A85D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199E57B2-7AE1-4026-AAC7-B9A0A41A85D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53AC590-A952-4E8A-ABCD-B14D33A6C91A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E44E8199-1783-4F22-84EA-157262CF2BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44E8199-1783-4F22-84EA-157262CF2BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44E8199-1783-4F22-84EA-157262CF2BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44E8199-1783-4F22-84EA-157262CF2BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A16D752-14BD-4E86-8BE8-D64235C5EC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A16D752-14BD-4E86-8BE8-D64235C5EC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A16D752-14BD-4E86-8BE8-D64235C5EC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A16D752-14BD-4E86-8BE8-D64235C5EC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4132A4-6C38-4D98-B0CC-EC3AF47E11C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4132A4-6C38-4D98-B0CC-EC3AF47E11C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4132A4-6C38-4D98-B0CC-EC3AF47E11C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4132A4-6C38-4D98-B0CC-EC3AF47E11C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A16D752-14BD-4E86-8BE8-D64235C5EC84} = {CD13184E-13F6-4628-9BA5-478D071B4321}
+	EndGlobalSection
+EndGlobal

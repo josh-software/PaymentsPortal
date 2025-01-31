@@ -1,0 +1,18 @@
+services:
+  paymentsportal.server:
+    image: ${DOCKER_REGISTRY-}paymentsportalserver
+    build:
+      context: .
+      dockerfile: PaymentsPortal.Server/Dockerfile
+
+  paymentsportal.services.accounts:
+    image: ${DOCKER_REGISTRY-}paymentsportalserverservicesaccounts
+    build:
+      context: .
+      dockerfile: Services/PaymentsPortal.Services.Accounts/Dockerfile
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine

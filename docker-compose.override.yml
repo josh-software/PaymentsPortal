@@ -1,0 +1,45 @@
+services:
+  paymentsportal.server:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - EventBusConnection=rabbitmq
+    ports:
+      - "7045:8080"
+      - "7046:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  paymentsportal.services.accounts:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionString=Server=sqldata;Database=paymentsportal.services.accounts;User Id=sa;Password=Pass@word;TrustServerCertificate=True;
+      - EventBusConnection=rabbitmq
+    ports:
+      - "7055:8080"
+      - "7056:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  sqldata:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"
+    volumes:
+      - rt-sqldata:/var/opt/mssql
+
+  rabbitmq:
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+volumes:
+  rt-sqldata:
+    external: false
