@@ -2,7 +2,7 @@ import { Account } from "../models/interfaces/Account";
 
 export class AccountsClient {
     private readonly baseUrl: string = ''
-    private readonly maxRetries: number = 3;
+    private readonly maxRetries: number = 5;
     private readonly initialDelay: number = 1000;
 
     private async fetch<T>(url: string): Promise<T> {

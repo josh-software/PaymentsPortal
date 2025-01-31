@@ -25,7 +25,6 @@ namespace PaymentsPortal.Server
             services.AddMassTransit(x =>
             {
                 //Add request clients here
-                x.AddRequestClient<GetWeatherForecastRequest>();
                 x.AddRequestClient<GetAccountsRequest>();
 
                 //Rabbit
