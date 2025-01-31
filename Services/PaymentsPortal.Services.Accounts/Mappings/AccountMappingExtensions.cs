@@ -12,7 +12,7 @@ namespace PaymentsPortal.Services.Accounts.Mappings
             {
                 AccountType.Current => new CurrentAccount
                 {
-                    Id = accountDto.Id,
+                    Id = accountDto.Id ?? Guid.NewGuid(),
                     Name = accountDto.Name,
                     Balance = accountDto.Balance,
                     IsFrozen = accountDto.IsFrozen,
@@ -20,7 +20,7 @@ namespace PaymentsPortal.Services.Accounts.Mappings
                 },
                 AccountType.Savings => new SavingsAccount
                 {
-                    Id = accountDto.Id,
+                    Id = accountDto.Id ?? Guid.NewGuid(),
                     Name = accountDto.Name,
                     Balance = accountDto.Balance,
                     IsFrozen = accountDto.IsFrozen,

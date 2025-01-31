@@ -45,7 +45,7 @@ namespace PaymentsPortal.Services.Accounts.Consumers
 
             try
             {
-                _dbContext.Accounts.Add(account.FromDto());
+                _dbContext.Accounts.Add(account.FromDto()); // From DTO generates a new Account Id
                 await _dbContext.SaveChangesAsync();
 
                 var createdAccount = await _dbContext.Accounts
