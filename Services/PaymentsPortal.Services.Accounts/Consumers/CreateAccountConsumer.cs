@@ -38,7 +38,7 @@ namespace PaymentsPortal.Services.Accounts.Consumers
                 await consumer.RespondAsync(new CreateAccountResponse
                 {
                     StatusCode = HttpStatusCode.Conflict, // 409 Conflict
-                    Message = "An account with this email already exists."
+                    Message = "An account with this ID already exists."
                 });
                 return;
             }
