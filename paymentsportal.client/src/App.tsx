@@ -36,7 +36,7 @@ function App() {
 
     return (
         <div>
-            <h1 id="tableLabel">All Accounts</h1>
+            <h1 id="tableLabel">Accounts</h1>
             {contents}
         </div>
     );
