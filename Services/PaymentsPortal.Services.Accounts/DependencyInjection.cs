@@ -30,6 +30,7 @@ namespace PaymentsPortal.Services.Accounts
                 x.AddConsumer<GetAccountsConsumer>();
                 x.AddConsumer<GetAccountByIdConsumer>();
                 x.AddConsumer<CreateAccountConsumer>();
+                x.AddConsumer<SetAccountFreezeConsumer>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>

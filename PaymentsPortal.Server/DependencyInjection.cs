@@ -28,6 +28,7 @@ namespace PaymentsPortal.Server
                 x.AddRequestClient<GetAccountsRequest>();
                 x.AddRequestClient<GetAccountByIdRequest>();
                 x.AddRequestClient<CreateAccountRequest>();
+                x.AddRequestClient<SetAccountFreezeRequest>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>

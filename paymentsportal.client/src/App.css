@@ -9,3 +9,16 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.clickableIcon {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .clickableIcon:hover {
+        transform: scale(1.2);
+    }
+
+    .clickableIcon:active {
+        transform: scale(0.9);
+    }

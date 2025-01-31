@@ -54,4 +54,15 @@ export class AccountsClient {
             body: JSON.stringify(account)
         });
     }
+
+    async setAccountFreeze(id: string, isFrozen: boolean): Promise<void> {
+        const url = `accounts/${id}/freeze`;
+        await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(isFrozen)
+        });
+    }
 }

@@ -21,8 +21,12 @@ Payment Portal is a basic account management system, designed as a learning proj
 - .NET 8 SDK
 - Node.js
 - Visual Studio
+  
+The project was designed and tested on a Windows machine and may require some additional configuration to run on other operating systems.
 
 ## Getting Started:
+Various Visual Studio configurations are included in the repository to make it easier to get started. The basic steps to get this up and running are as follows:
+
 1. Clone the repository.
 2. Open the solution in Visual Studio.
 3. Set the `docker-compose` project as the startup project.
