@@ -1,9 +1,11 @@
+import { AccountType } from "../enums/AccountType";
+
 export interface Account {
-    id: string;
+    id?: string;
     name: string;
     balance: number;
     isFrozen: boolean;
-    accountType: string;
+    accountType: AccountType;
     interestRate?: number;
     overdraftLimit?: number;
 }

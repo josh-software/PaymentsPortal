@@ -2,7 +2,7 @@
 {
     public class Account
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid? Id { get; set; }
         public required string Name { get; set; }
         public decimal Balance { get; set; }
         public bool IsFrozen { get; set; } = false;
