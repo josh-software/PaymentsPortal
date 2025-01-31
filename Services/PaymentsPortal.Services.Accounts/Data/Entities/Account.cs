@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using PaymentsPortal.Common.DTOs.Accounts.Enums;
 
 namespace PaymentsPortal.Services.Accounts.Data.Entities
 {

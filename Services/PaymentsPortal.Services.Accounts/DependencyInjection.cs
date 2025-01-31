@@ -28,6 +28,7 @@ namespace PaymentsPortal.Services.Accounts
             {
                 //Add consumers here
                 x.AddConsumer<GetWeatherForcastConsumer>();
+                x.AddConsumer<GetAccountsConsumer>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>

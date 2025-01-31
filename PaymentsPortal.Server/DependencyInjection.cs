@@ -26,6 +26,7 @@ namespace PaymentsPortal.Server
             {
                 //Add request clients here
                 x.AddRequestClient<GetWeatherForecastRequest>();
+                x.AddRequestClient<GetAccountsRequest>();
 
                 //Rabbit
                 x.UsingRabbitMq((context, cfg) =>
