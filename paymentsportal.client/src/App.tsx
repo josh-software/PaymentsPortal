@@ -3,9 +3,12 @@ import './App.css';
 import { AccountsClient } from './clients/AccountsClient';
 import { Account } from './models/interfaces/Account';
 import { toMoney } from './formatters/formatters';
+import { Button } from '@mui/material';
+import CreateAccountModal from './components/modals/CreateAccountModal';
 
 function App() {
     const [accounts, setAccounts] = useState<Account[]>();
+    const [showCreateAccountModal, setShowCreateAccountModal] = useState<boolean>(false);
 
     useEffect(() => {
         populateAccountData();
@@ -37,6 +40,20 @@ function App() {
     return (
         <div>
             <h1 id="tableLabel">Accounts</h1>
+            <Button onClick={() => setShowCreateAccountModal(true)}>Create Account</Button>
+            {showCreateAccountModal && <CreateAccountModal
+                open={showCreateAccountModal}
+                onCreate={async (account) => {
+                    const accountsClient = new AccountsClient();
+                    await accountsClient.createAccount(account);
+                    populateAccountData();
+                    setShowCreateAccountModal(false);
+                }}
+                onClose={() => {
+                    populateAccountData();
+                    setShowCreateAccountModal(false);
+                }}
+            />}
             {contents}
         </div>
     );

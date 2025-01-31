@@ -1,7 +1,6 @@
 import { Account } from "../models/interfaces/Account";
 
 export class AccountsClient {
-    private readonly baseUrl: string = ''
     private readonly maxRetries: number = 5;
     private readonly initialDelay: number = 1000;
 
@@ -37,5 +36,22 @@ export class AccountsClient {
     async getAccounts(): Promise<Account[]> {
         const url = `accounts`;
         return this.fetch<Account[]>(url);
+    }
+
+    async getAccountById(id: string): Promise<Account> {
+        const url = `accounts/${id}`;
+        return this.fetch<Account>(url);
+    }
+
+    //TODO: Handle errors in the POST request
+    async createAccount(account: Account): Promise<void> {
+        const url = `accounts`;
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(account)
+        });
     }
 }
