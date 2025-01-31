@@ -21,7 +21,7 @@ function App() {
                 <tr>
                     <th>Name</th>
                     <th>Balance</th>
-                    <th>Is Frozen</th>
+                    <th>Is Frozen <br/> (Click to Toggle)</th>
                     <th>Account Type</th>
                 </tr>
             </thead>
@@ -30,7 +30,11 @@ function App() {
                     <tr key={account.id}>
                         <td>{account.name}</td>
                         <td>{toMoney(account.balance)}</td>
-                        <td>{account.isFrozen ? String.fromCodePoint(0x1F9CA) : String.fromCodePoint(0x1F525)}</td>
+                        <td
+                            className="clickableIcon"
+                            onClick={() => toggleFreezeAccount(account)}>
+                            {account.isFrozen ? String.fromCodePoint(0x1F9CA) : String.fromCodePoint(0x1F525)}
+                        </td>
                         <td>{account.accountType}</td>
                     </tr>
                 )}
@@ -62,6 +66,12 @@ function App() {
         const accountsClient = new AccountsClient();
         const response = await accountsClient.getAccounts();
         setAccounts(response);
+    }
+
+    async function toggleFreezeAccount(account: Account) {
+        const accountsClient = new AccountsClient();
+        await accountsClient.setAccountFreeze(account.id!, !account.isFrozen);
+        populateAccountData();
     }
 }
 
